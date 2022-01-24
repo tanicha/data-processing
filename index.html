@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/data-processing.css" />
  </head>
  <body>
      <header>
@@ -18,15 +19,48 @@
         </nav>
      </header>
      
-   <main class="wrapper">
+    <p>
+        This page demonstrates data processing of query string data using client side JavaScript.
+        Upon submission, the cart items are totaled and title case is applied to the Shipping Info. 
+    </p>
+
+   <main class="wrapper"></main>
+   <div id="output">
        <form method = "get" action = "" class="main-form">
+        <h3>Buy a Widget! </h3>
+
+        <div id="widgets">
+            <div>
+                <b>Widget</b><br />
+                <p>Our Widgets are spring loaded and need no batteries!</p>
+                <p>At $3.99 they're a bargain!</p>
+                <p> <label><input type="checkbox" name="Cart" value="Widget" /> Add to Cart <label></p>
+                <div class="pic"><img src="images/widget.png" /></div>
+            </div>
+            <div>
+                <b>Sprocket</b><br />
+                <p>Our Sprockets are well made and hold up to extreme pressure!</p>
+                <p>They only cost $5.99!</p>
+                <p> <label><input type="checkbox" name="Cart" value="Sprocket" /> Add to Cart <label></p>
+                <div class="pic"><img src="images/sprocket.png" /></div>
+            </div>
+            <div>
+                <b>Thingy</b><br />
+                <p>Our Thingys have many uses, and people love them!</p>
+                <p>Such a deal at $1.99!</p>
+                <p> <label><input type="checkbox" name="Cart" value="Thingy" /> Add to Cart <label></p>
+                <div class="pic"><img src="images/thingy.png" /></div>
+            </div>
+        </div>
+
+        <h3>Shipping Info</h3> 
            <div>
                <label for = "FirstName">First Name</label>:<br />
-                <input type = "text" name = "FirstName" id="FirstName" placeholder = "First Name" required = "required" autofocus />
+                <input type = "text" name = "First_Name" id="First_Name" placeholder = "First Name" required = "required" autofocus />
             </div>
             <div>
                 <label for = "LastName">Last Name</label>:<br />
-                 <input type = "text" name = "LastName" id="LastName" placeholder = "Last Name" required = "required" />
+                 <input type = "text" name = "Last_Name" id="Last_Name" placeholder = "Last Name" required = "required" />
              </div>
              <div>
                 <label for = "Email">Email</label>:<br />
@@ -35,6 +69,10 @@
              <div>
                 <label for = "Address">Address</label>:<br />
                  <input type = "text" name = "Address" id="Address" placeholder = "Please put your street address here" required = "required" />
+             </div>
+             <div>
+                <label for = "City">City</label>:<br />
+                 <input type = "text" name = "City" id="City" placeholder = "City" required = "required" />
              </div>
              <div>
                  <label for = "State">State</label>:<br />
@@ -47,28 +85,16 @@
                  </select>
              </div>
              <div>
-                 <fieldset>
-                     <legend>Would You Like to Join Our Mailing List?</legend>
-                     <label><input type="radio" name="JoinMailingList" value="Yes" required = required /> Yes <label><br />
-                     <label><input type="radio" name="JoinMailingList" value="No" /> No <label>
-                 </fieldset>
+                <label for = "Postal Code">Postal Code</label>:<br />
+                 <input type = "text" name = "Postal Code" id="Postal Code" placeholder = "Postal Code" required = "required" />
              </div>
-             <div>
-                <fieldset>
-                    <legend>What Are You Interested In?</legend>
-                    <label><input type="checkbox" name="InterestedIn" value="Website" /> Website <label><br />
-                    <label><input type="checkbox" name="InterestedIn" value="OnlineCalendar" /> Online Calendar <label><br />
-                    <label><input type="checkbox" name="InterestedIn" value="ContactForm" /> Contact Form <label><br />
-                        <label><input type="checkbox" name="InterestedIn" value="Lollipops" /> Complimentary Lollipops <label>
-                </fieldset>
-            </div>
             <div>
-                <label for = "Address">Comments</label>:<br />
-                <textarea name="Comments" placeholder="Your opinion is important to us" cols="36" rows="4" ></textarea>
+                <label for = "Address">Notes</label>:<br />
+                <textarea name="Notes" placeholder="" cols="36" rows="4" ></textarea>
              </div>
             <div> <input type = "submit" value = "Submit" /></div>
        </form>
-
+    </div>
      <footer>
       <p><small>&copy; 2020-<span id="copyright">2022</span> by Tani Cha,
         All Rights Reserved ~
@@ -78,12 +104,7 @@
      </p>
     </footer>
   </main>
-  <script src="js/main.js">
-      
-      	//https://tinyurl.com/dynamic-html-checker
-		document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
-		 
-        document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href); 
-  </script>
+  <script src="js/data-processing.js"></script>
+  <script src="js/main.js"></script>
  </body>
 </html>
